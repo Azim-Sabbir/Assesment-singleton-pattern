@@ -20,11 +20,6 @@ use Illuminate\Support\Facades\Storage;
 Route::get('/', function () {
     return view('adminlogin');
 });
-Route::get('/abcd', function () {
-    $json = Storage::disk('local')->get('admin.json');
-    $jsone = json_decode($json, true);
-    dd($jsone);
-});
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/employees', [EmployeeController::class, 'index']);
 Route::get('/employees/crate', [EmployeeController::class, 'create']);
